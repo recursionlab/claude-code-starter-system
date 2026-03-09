@@ -217,6 +217,7 @@ You're here          You want this            Install this
 Raw Claude Code  ->  Session memory       ->  Starter System (free) <- you are here
                  ->  Workflow skills      ->  + Skills Bundle (free)
                  ->  Deep planning        ->  + UPF (free)
+                 ->  Deep analysis        ->  + Quantum Lens (free)
                  ->  AI-powered system    ->  + Course (paid)
 ```
 
@@ -225,6 +226,7 @@ Raw Claude Code  ->  Session memory       ->  Starter System (free) <- you are h
 | **Starter System** | Session memory, handoffs, context awareness | You're reading it |
 | **Skills Bundle** | 5 workflow skills: debugging, delegation, planning, code review, config architecture | [GitHub](https://github.com/primeline-ai/primeline-skills) |
 | **UPF** | Universal Planning Framework with deep multi-stage planning | [GitHub](https://github.com/primeline-ai/universal-planning-framework) |
+| **Quantum Lens** | Multi-perspective analysis + solution engineering (7 cognitive lenses) | [GitHub](https://github.com/primeline-ai/quantum-lens) |
 | **Course** | Kairn + Synapse: AI-powered memory and knowledge graphs | [primeline.cc](https://primeline.cc) |
 
 ### How They Work Together
@@ -250,3 +252,7 @@ Learn more at [primeline.cc](https://primeline.cc)
 ## License
 
 MIT - use it, fork it, build on it.
+
+---
+
+**Built by [@PrimeLineAI](https://x.com/PrimeLineAI) - Build systems, not sessions.**
