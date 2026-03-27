@@ -13,13 +13,13 @@ You are loading the project context for the current session. Follow these steps 
 
 ### Step 1: Read the Memory Index
 
-Read `.claude/memory/index.json` to get the active project name.
+Read `.hyperagent/memory/index.json` to get the active project name.
 
 If this file does not exist, skip to the "No Memory Found" fallback at the bottom.
 
 ### Step 2: Read Project State
 
-Read `.claude/memory/projects/{active}.json` where `{active}` is the project name from Step 1.
+Read `.hyperagent/memory/projects/{active}.json` where `{active}` is the project name from Step 1.
 
 This file contains the project goals, current phase, progress log, and any known blockers.
 
@@ -44,7 +44,7 @@ Rules for the context block:
 
 ### Step 4: Check for Recent Handoff
 
-Look for the most recent file in `.claude/handoffs/` (sort by filename, newest first).
+Look for the most recent file in `.hyperagent/handoffs/` (sort by filename, newest first).
 
 If a handoff file exists:
 - Read it
@@ -72,7 +72,7 @@ These guidelines apply throughout the entire session, not just at boot.
 
 | Event | Action |
 |-------|--------|
-| Task completed | Append to `progress` array in `.claude/memory/projects/{active}.json` |
+| Task completed | Append to `progress` array in `.hyperagent/memory/projects/{active}.json` |
 | Feature finished | Update status to "done" in project file |
 | Error or setback | Append to `failures` array |
 | Blocker found | Update `blockers` field |
@@ -129,10 +129,10 @@ Resuming: say "continue" at session start. This skill reads the handoff automati
 
 ## No Memory Found - First-Time Onboarding
 
-If `.claude/memory/index.json` does not exist, this is a first-time user. Give them a guided welcome:
+If `.hyperagent/memory/index.json` does not exist, this is a first-time user. Give them a guided welcome:
 
 ```
-Welcome to the Claude Code Starter System!
+Welcome to the Hyperagent Runtime Starter System!
 
 This plugin gives you session memory - so I remember where you left off between sessions.
 

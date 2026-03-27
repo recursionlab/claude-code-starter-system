@@ -13,7 +13,7 @@ Show how much of your context window is currently used, with a visual indicator 
 Run this bash command to find the latest context file:
 
 ```bash
-ls -t /tmp/claude-context-pct-*.txt 2>/dev/null | head -1 | xargs cat 2>/dev/null
+ls -t /tmp/hyperagent-context-pct-*.txt 2>/dev/null | head -1 | xargs cat 2>/dev/null
 ```
 
 If the command returns nothing or fails, skip to the "Not Available" fallback at the bottom.

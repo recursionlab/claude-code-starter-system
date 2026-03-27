@@ -3,7 +3,7 @@
 ## [1.1.0] - 2026-02-28
 
 ### Fixed
-- plugin.json now passes `claude plugin validate` (author as object, removed invalid fields)
+- plugin.json now passes `hyperagent plugin validate` (author as object, removed invalid fields)
 - Removed `rules/` directory (not supported by plugin system - auto-discovery only works for commands, agents, skills, hooks)
 - All rules content (memory bootup, context management, delegation, session hygiene) folded into system-boot skill
 - Quick Start updated with correct `--plugin-dir` installation method

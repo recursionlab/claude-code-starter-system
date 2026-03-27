@@ -51,7 +51,7 @@ Keep this conversational. Ask all questions for the type at once, not one by one
 ### Step 3: Generate Tags
 
 Generate 3-5 tags based on:
-- The active project (if known from `.claude/memory/index.json`)
+- The active project (if known from `.hyperagent/memory/index.json`)
 - Technology or tool mentioned
 - Keywords from the description
 
@@ -61,7 +61,7 @@ Format tags as lowercase slugs: `next-js`, `api-auth`, `caching`
 
 Create the file at:
 ```
-.claude/memory/learnings/{type}-{YYYY-MM-DD}-{short-slug}.md
+.hyperagent/memory/learnings/{type}-{YYYY-MM-DD}-{short-slug}.md
 ```
 
 Where `{short-slug}` is a 2-3 word kebab-case summary of the content.

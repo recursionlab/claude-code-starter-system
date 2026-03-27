@@ -1,4 +1,4 @@
-# Claude Code Starter System
+# Hyperagent Runtime Starter System
 
 **Build Systems, Not Sessions**
 
@@ -6,11 +6,11 @@
 
 ## The Problem
 
-Claude Code sessions are ephemeral. Every new session starts from zero - no memory of what you built yesterday, what decisions you made, what failed last week. You repeat the same context-setting ritual, re-explain your project, and rediscover mistakes you already paid for. Free memory plugins solve one piece of this, but memory alone is not a system.
+Hyperagent Runtime sessions are ephemeral. Every new session starts from zero - no memory of what you built yesterday, what decisions you made, what failed last week. You repeat the same context-setting ritual, re-explain your project, and rediscover mistakes you already paid for. Free memory plugins solve one piece of this, but memory alone is not a system.
 
 ## The Solution
 
-A complete session management system for Claude Code. Not just memory storage - handoffs, context awareness, delegation guidance, and project tracking working together. Extracted from a 650-node production AI system and distilled to the 20% that delivers 80% of the value.
+A complete session management system for Hyperagent Runtime. Not just memory storage - handoffs, context awareness, delegation guidance, and project tracking working together. Extracted from a 650-node production AI system and distilled to the 20% that delivers 80% of the value.
 
 No MCP servers. No API keys. No external dependencies. Pure markdown and JSON - drop it in and go.
 
@@ -23,7 +23,7 @@ No MCP servers. No API keys. No external dependencies. Pure markdown and JSON - 
 | Command | What it does |
 |---------|-------------|
 | `/remember` | Save a learning, decision, or observation to project memory |
-| `/handoff` | Create a session continuity document before you close Claude |
+| `/handoff` | Create a session continuity document before you close Hyperagent |
 | `/project-status` | View current project state or initialize a new project |
 | `/context-stats` | See how much of your context window is used |
 
@@ -42,19 +42,19 @@ No MCP servers. No API keys. No external dependencies. Pure markdown and JSON - 
 
 ### Session (try it now)
 
-Start Claude Code with the plugin loaded for this session:
+Start Hyperagent Runtime with the plugin loaded for this session:
 
 ```bash
-claude --plugin-dir /path/to/claude-code-starter-system
+hyperagent --plugin-dir /path/to/hyperagent-code-starter-system
 ```
 
 ### Permanent Install
 
-To load the plugin automatically in every session, add it to your Claude Code settings:
+To load the plugin automatically in every session, add it to your Hyperagent Runtime settings:
 
 ```json
 {
-  "pluginDirectories": ["/path/to/claude-code-starter-system"]
+  "pluginDirectories": ["/path/to/hyperagent-code-starter-system"]
 }
 ```
 
@@ -81,11 +81,11 @@ Save something worth keeping before it gets lost.
 /remember Gotcha: the auth middleware runs before the rate limiter, not after
 ```
 
-Saves to `.claude/memory/learnings/` as structured markdown with YAML frontmatter. Browse your learnings anytime.
+Saves to `.hyperagent/memory/learnings/` as structured markdown with YAML frontmatter. Browse your learnings anytime.
 
 ### `/handoff`
 
-Creates a continuity document at session end. Run this before closing Claude.
+Creates a continuity document at session end. Run this before closing Hyperagent.
 
 ```
 /handoff
@@ -119,16 +119,16 @@ Returns a visual indicator and percentage. Useful before starting a large task -
 ## How It Works
 
 **Session start**
-`system-boot` reads `.claude/memory/index.json` to find your active project, then loads `.claude/memory/projects/{name}.json`. Claude gets oriented before your first message: current phase, last progress, known blockers, next suggested step.
+`system-boot` reads `.hyperagent/memory/index.json` to find your active project, then loads `.hyperagent/memory/projects/{name}.json`. Hyperagent gets oriented before your first message: current phase, last progress, known blockers, next suggested step.
 
 **During work**
-`/remember` saves learnings as you go. The `system-boot` guidelines steer Claude toward using sub-agents for exploration and research tasks - keeping your main context clean - and flag when you are approaching context limits.
+`/remember` saves learnings as you go. The `system-boot` guidelines steer Hyperagent toward using sub-agents for exploration and research tasks - keeping your main context clean - and flag when you are approaching context limits.
 
 **Session end**
 `/handoff` writes a structured continuity document. It captures what was completed, what is in progress, any decisions made, and what to tackle next.
 
 **Next session**
-`system-boot` loads the project state and finds the latest handoff file. Claude picks up where you left off without you re-explaining anything.
+`system-boot` loads the project state and finds the latest handoff file. Hyperagent picks up where you left off without you re-explaining anything.
 
 ---
 
@@ -140,7 +140,7 @@ The system builds itself through use. Here is what your memory looks like over t
 You run `/project-status`, answer 3 questions, and get an empty project file. That's it. The value is not obvious yet.
 
 **After 3 sessions:**
-Your project file has a progress log. Claude opens each session already knowing what you did yesterday and what's next. You stop re-explaining context.
+Your project file has a progress log. Hyperagent opens each session already knowing what you did yesterday and what's next. You stop re-explaining context.
 
 **After 1 week (~8 sessions):**
 Your memory looks like this:
@@ -166,7 +166,7 @@ You have a progress log tracking every session, a failures log that prevents rep
 After setup, the plugin manages this structure in your project:
 
 ```
-.claude/
+.hyperagent/
   memory/
     index.json              # Active project pointer
     projects/
@@ -179,7 +179,7 @@ After setup, the plugin manages this structure in your project:
     2026-02-27-staging-deploy.md   # Session continuity documents (auto-generated)
 ```
 
-Your existing `.claude/` setup is not touched. The plugin adds to it, does not overwrite.
+Your existing `.hyperagent/` setup is not touched. The plugin adds to it, does not overwrite.
 
 ---
 
@@ -187,21 +187,21 @@ Your existing `.claude/` setup is not touched. The plugin adds to it, does not o
 
 **How is this different from other memory plugins?**
 
-Most memory plugins store facts. This is a system: memory + handoffs + context awareness + delegation guidance. The difference is that when you open a new session, Claude already knows where you are, what failed, and what to do next - without you saying a word.
+Most memory plugins store facts. This is a system: memory + handoffs + context awareness + delegation guidance. The difference is that when you open a new session, Hyperagent already knows where you are, what failed, and what to do next - without you saying a word.
 
-**Will it conflict with my existing Claude Code setup?**
+**Will it conflict with my existing Hyperagent Runtime setup?**
 
 No. The plugin adds commands and a skill - it does not override anything. If you already have memory or handoff workflows, they continue to work. This adds on top.
 
 **Do I need anything else installed?**
 
-Nothing. No MCP servers, no npm packages, no API keys. Every file is plain markdown or JSON. It works in any Claude Code project on any machine.
+Nothing. No MCP servers, no npm packages, no API keys. Every file is plain markdown or JSON. It works in any Hyperagent Runtime project on any machine.
 
 **Can I use this across multiple projects?**
 
-Yes. Each project gets its own entry in `.claude/memory/projects/`. Switch active projects by updating `index.json` or running `/project-status` in a project without memory.
+Yes. Each project gets its own entry in `.hyperagent/memory/projects/`. Switch active projects by updating `index.json` or running `/project-status` in a project without memory.
 
-**What if I already have a `.claude/` directory?**
+**What if I already have a `.hyperagent/` directory?**
 
 The plugin will coexist with your existing setup. The `memory/` subdirectory it uses is unlikely to conflict with anything already there. Check the directory structure above before installing if you want to be sure.
 
@@ -214,7 +214,7 @@ This starter system is the foundation. Each tier works independently - no hard d
 ```
 You're here          You want this            Install this
 -----------          -------------            ------------
-Raw Claude Code  ->  Session memory       ->  Starter System (free) <- you are here
+Raw Hyperagent Runtime  ->  Session memory       ->  Starter System (free) <- you are here
                  ->  Workflow skills      ->  + Skills Bundle (free)
                  ->  Deep planning        ->  + UPF (free)
                  ->  Deep analysis        ->  + Quantum Lens (free)
@@ -259,12 +259,12 @@ MIT - use it, fork it, build on it.
 
 | Tool | What It Does | Deep Dive |
 |------|-------------|-----------|
-| [**Evolving Lite**](https://github.com/primeline-ai/evolving-lite) | Self-improving Claude Code plugin — memory, delegation, self-correction | [Blog](https://primeline.cc/blog/knowledge-architecture) |
+| [**Evolving Lite**](https://github.com/primeline-ai/evolving-lite) | Self-improving Hyperagent Runtime plugin — memory, delegation, self-correction | [Blog](https://primeline.cc/blog/knowledge-architecture) |
 | [**Kairn**](https://github.com/primeline-ai/kairn) | Persistent knowledge graph with context routing for AI | [Blog](https://primeline.cc/blog/knowledge-architecture) |
-| [**tmux Orchestration**](https://github.com/primeline-ai/claude-tmux-orchestration) | Parallel Claude Code sessions with heartbeat monitoring | [Blog](https://primeline.cc/blog/tmux-orchestration) |
+| [**tmux Orchestration**](https://github.com/primeline-ai/hyperagent-tmux-orchestration) | Parallel Hyperagent Runtime sessions with heartbeat monitoring | [Blog](https://primeline.cc/blog/tmux-orchestration) |
 | [**UPF**](https://github.com/primeline-ai/universal-planning-framework) | 3-stage planning with adversarial hardening | [Blog](https://primeline.cc/blog/planning-framework-dsv-reasoning) |
 | [**Quantum Lens**](https://github.com/primeline-ai/quantum-lens) | 7 cognitive lenses for multi-perspective analysis | [Blog](https://primeline.cc/blog/quantum-lens-multi-agent-analysis) |
-| [**PrimeLine Skills**](https://github.com/primeline-ai/primeline-skills) | 5 production-grade workflow skills for Claude Code | [Blog](https://primeline.cc/blog/score-based-auto-delegation) |
-| [**Starter System**](https://github.com/primeline-ai/claude-code-starter-system) | Lightweight session memory and handoffs | [Blog](https://primeline.cc/blog/session-management) |
+| [**PrimeLine Skills**](https://github.com/primeline-ai/primeline-skills) | 5 production-grade workflow skills for Hyperagent Runtime | [Blog](https://primeline.cc/blog/score-based-auto-delegation) |
+| [**Starter System**](https://github.com/primeline-ai/hyperagent-code-starter-system) | Lightweight session memory and handoffs | [Blog](https://primeline.cc/blog/session-management) |
 
 **[@PrimeLineAI](https://x.com/PrimeLineAI)** · [primeline.cc](https://primeline.cc) · [Free Guide](https://primeline.cc/guide)

@@ -20,7 +20,7 @@ If the conversation has limited history, note what you can observe from the cont
 
 ### Step 2: Read Project Context
 
-Read `.claude/memory/projects/{active}.json` to get the project name and current phase.
+Read `.hyperagent/memory/projects/{active}.json` to get the project name and current phase.
 
 If the file does not exist, use "unknown" for project name and phase.
 
@@ -30,7 +30,7 @@ Determine a short topic slug from the session focus (2-3 words, kebab-case).
 
 Create the file at:
 ```
-.claude/handoffs/{YYYY-MM-DD}-{topic-slug}.md
+.hyperagent/handoffs/{YYYY-MM-DD}-{topic-slug}.md
 ```
 
 Use this structure:
@@ -69,7 +69,7 @@ is better than "Continue working on auth."}
 
 ### Step 4: Update Project Memory
 
-Read `.claude/memory/projects/{active}.json`.
+Read `.hyperagent/memory/projects/{active}.json`.
 
 If the file exists, add a new entry to the `progress` array:
 
@@ -90,9 +90,9 @@ If the file does not exist, skip this step.
 Display the full handoff content to the user, then add:
 
 ```
-Saved to: .claude/handoffs/{filename}
+Saved to: .hyperagent/handoffs/{filename}
 
-To continue next session, say: "continue" or share this file with @.claude/handoffs/{filename}
+To continue next session, say: "continue" or share this file with @.hyperagent/handoffs/{filename}
 ```
 
 ---

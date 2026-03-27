@@ -10,13 +10,13 @@ Show the current project status, or set up project memory for the first time.
 
 ### Step 1: Check for Existing Memory
 
-Read `.claude/memory/index.json`.
+Read `.hyperagent/memory/index.json`.
 
 ---
 
 ### Path A: Memory Exists
 
-Read `.claude/memory/projects/{active}.json` where `{active}` is the project name from the index.
+Read `.hyperagent/memory/projects/{active}.json` where `{active}` is the project name from the index.
 
 Display the project status:
 
@@ -40,7 +40,7 @@ Then ask: "What would you like to work on?"
 
 ### Path B: No Memory Found - Initialize
 
-If `.claude/memory/index.json` does not exist, start the initialization flow.
+If `.hyperagent/memory/index.json` does not exist, start the initialization flow.
 
 Ask these questions one at a time:
 
@@ -50,7 +50,7 @@ Ask these questions one at a time:
 
 After all three answers, create the memory files:
 
-**`.claude/memory/index.json`:**
+**`.hyperagent/memory/index.json`:**
 ```json
 {
   "active": "{name-slug}",
@@ -60,7 +60,7 @@ After all three answers, create the memory files:
 
 Where `{name-slug}` is the project name in lowercase kebab-case (e.g., "My App" becomes "my-app").
 
-**`.claude/memory/projects/{name-slug}.json`:**
+**`.hyperagent/memory/projects/{name-slug}.json`:**
 ```json
 {
   "name": "{project name as given}",
@@ -71,7 +71,7 @@ Where `{name-slug}` is the project name in lowercase kebab-case (e.g., "My App" 
 }
 ```
 
-Create the `.claude/memory/projects/` directory path as needed.
+Create the `.hyperagent/memory/projects/` directory path as needed.
 
 Confirm with:
 

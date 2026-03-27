@@ -4,7 +4,7 @@
 
 This is a pure markdown project - no executable code, no dependencies, no build step. The attack surface is minimal.
 
-That said, if you find something that could be exploited (e.g., prompt injection patterns in skill definitions, or content that could trick Claude Code into unsafe behavior), we want to know.
+That said, if you find something that could be exploited (e.g., prompt injection patterns in skill definitions, or content that could trick Hyperagent Runtime into unsafe behavior), we want to know.
 
 ## Reporting a Vulnerability
 
@@ -22,7 +22,7 @@ We will acknowledge receipt within 48 hours and provide an update within 7 days.
 
 ## What We Consider Security Issues
 
-- Prompt injection patterns that could bypass Claude Code safety
+- Prompt injection patterns that could bypass Hyperagent Runtime safety
 - Content that could trick users into running dangerous commands
 - Sensitive information accidentally committed
 - Anything that could harm users who install this system

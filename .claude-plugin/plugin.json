@@ -1,7 +1,7 @@
 {
-  "name": "claude-code-starter-system",
+  "name": "hyperagent-code-starter-system",
   "version": "1.1.0",
-  "description": "A complete session management system for Claude Code. Memory persistence, session handoffs, context awareness, and delegation basics - extracted from a 650-node production AI system.",
+  "description": "A complete session management system for Hyperagent Runtime. Memory persistence, session handoffs, context awareness, and delegation basics - extracted from a 650-node production AI system.",
   "author": {
     "name": "Robin (PrimeLine)",
     "url": "https://primeline.cc"

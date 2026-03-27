@@ -14,5 +14,5 @@
 
 - [ ] I've read [CONTRIBUTING.md](../CONTRIBUTING.md)
 - [ ] My changes follow the existing style and structure
-- [ ] I've tested that Claude Code can discover and use the modified files
+- [ ] I've tested that Hyperagent Runtime can discover and use the modified files
 - [ ] No sensitive information or internal references included

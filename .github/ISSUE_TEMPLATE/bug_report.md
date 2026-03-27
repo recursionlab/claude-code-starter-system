@@ -26,6 +26,6 @@ assignees: ''
 
 ## Environment
 
-- Claude Code version:
+- Hyperagent Runtime version:
 - OS:
 - How installed: (pluginDirectories / --plugin-dir / copy)

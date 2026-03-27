@@ -1,6 +1,6 @@
 # Contributing
 
-Thanks for your interest in contributing to the Claude Code Starter System.
+Thanks for your interest in contributing to the Hyperagent Runtime Starter System.
 
 ## How to Contribute
 
@@ -11,7 +11,7 @@ Thanks for your interest in contributing to the Claude Code Starter System.
 ## Guidelines
 
 - Keep it simple. This is a markdown-based project - no build steps, no dependencies
-- Test that Claude Code can discover and use your changes
+- Test that Hyperagent Runtime can discover and use your changes
 - Follow the existing file structure and naming conventions
 - One change per PR - easier to review, easier to revert if needed
 
